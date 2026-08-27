@@ -1,0 +1,225 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* BE brand palette */
+  --color-navy: var(--navy);
+  --color-navy-dark: var(--navy-dark);
+  --color-blue-mid: var(--blue-mid);
+  --color-tech: var(--tech);
+  --color-celeste: var(--celeste);
+  --color-surface: var(--surface);
+
+  --font-sans: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-roboto-condensed), var(--font-roboto), sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  color-scheme: light;
+
+  /* BE brand palette (hex from dossier) */
+  --navy: #182c60;
+  --navy-dark: #1a2850;
+  --blue-mid: #285c9c;
+  --tech: #1c90c8;
+  --celeste: #55b5ee;
+  --surface: #eef3f6;
+
+  --background: #f8fafb;
+  --foreground: #182c60;
+  --card: #ffffff;
+  --card-foreground: #182c60;
+  --popover: #ffffff;
+  --popover-foreground: #182c60;
+  --primary: #182c60;
+  --primary-foreground: #ffffff;
+  --secondary: #eef3f6;
+  --secondary-foreground: #182c60;
+  --muted: #eef3f6;
+  --muted-foreground: #536170;
+  --accent: #1c90c8;
+  --accent-foreground: #ffffff;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #d8e1e8;
+  --input: #d8e1e8;
+  --ring: #1c90c8;
+
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'liga' 1, 'calt' 1;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Subtle entrance animation utilities */
+@keyframes be-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes be-experience-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes be-header-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes be-header-link-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes be-mobile-menu-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.be-reveal {
+  opacity: 0;
+}
+
+.be-reveal.is-visible {
+  animation: be-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.be-experience-enter {
+  animation: be-experience-enter 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.be-header-enter {
+  animation: be-header-enter 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.be-header-link-enter {
+  animation: be-header-link-enter 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.be-mobile-menu-enter {
+  animation: be-mobile-menu-enter 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .be-reveal,
+  .be-reveal.is-visible,
+  .be-experience-enter,
+  .be-header-enter,
+  .be-header-link-enter,
+  .be-mobile-menu-enter {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+
+/* Subtle centered BE logo watermark used across content sections. */
+.be-watermark {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.be-watermark::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 50%;
+  width: min(34rem, 70vw);
+  height: min(34rem, 70vw);
+  transform: translate(-50%, -50%);
+  background: url('/images/logo-bena.png') center / contain no-repeat;
+  opacity: 0.055;
+  pointer-events: none;
+}
+
+.be-watermark > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 640px) {
+  .be-watermark::before {
+    width: 22rem;
+    height: 22rem;
+    opacity: 0.045;
+  }
+}
