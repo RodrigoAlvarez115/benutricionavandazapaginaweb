@@ -9,14 +9,14 @@ import { useAudience } from '@/components/audience-selector'
 
 const INITIAL_NAV_ITEMS = [
   { label: 'Inicio', href: '#inicio' },
-  { label: 'QuiÃ©nes somos', href: '#quienes-somos' },
+  { label: 'Quiénes somos', href: '#quienes-somos' },
   { label: 'Contacto', href: '#contacto' },
 ] as const
 
 const PATIENT_NAV_ITEMS = [
   { label: 'Inicio', href: '#inicio' },
-  { label: 'AtenciÃ³n nutricional', href: '#atencion-nutricional' },
-  { label: 'CÃ³mo trabajamos', href: '#como-trabajamos' },
+  { label: 'Atención nutricional', href: '#atencion-nutricional' },
+  { label: 'Cómo trabajamos', href: '#como-trabajamos' },
   { label: 'Nuestro equipo', href: '#nuestro-equipo' },
   { label: 'Acceso pacientes', href: '#acceso-pacientes' },
   { label: 'Contacto', href: '#contacto' },

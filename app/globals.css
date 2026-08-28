@@ -73,6 +73,32 @@
   --radius: 0.5rem;
 }
 
+/* Softer blue-violet palette for the patient experience. */
+[data-audience='patient'] {
+  --navy: #4c5fa8;
+  --navy-dark: #39498d;
+  --blue-mid: #6676bd;
+  --tech: #7588d6;
+  --celeste: #aebcff;
+  --surface: #f0f2ff;
+
+  --background: #fafbff;
+  --foreground: #39498d;
+  --card: #ffffff;
+  --card-foreground: #39498d;
+  --popover: #ffffff;
+  --popover-foreground: #39498d;
+  --primary: #4c5fa8;
+  --secondary: #f0f2ff;
+  --secondary-foreground: #39498d;
+  --muted: #f0f2ff;
+  --muted-foreground: #5f6987;
+  --accent: #7588d6;
+  --border: #dce1f4;
+  --input: #dce1f4;
+  --ring: #7588d6;
+}
+
 @layer base {
   * {
     @apply border-border;
