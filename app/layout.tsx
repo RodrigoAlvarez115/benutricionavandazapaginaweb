@@ -3,6 +3,8 @@ import type { Metadata, Viewport } from 'next'
 import { Roboto, Roboto_Condensed } from 'next/font/google'
 import './globals.css'
 
+const siteUrl = 'https://www.benutricionavanzada.com/'
+
 const roboto = Roboto({
   subsets: ['latin'],
   weight: ['300', '400', '500', '700'],
@@ -18,10 +20,14 @@ const robotoCondensed = Roboto_Condensed({
 })
 
 export const metadata: Metadata = {
-  title: 'BE Nutrición Avanzada | Salud Corporativa y Nutrición de Precisión',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: 'Nutrición de Precisión y Salud Corporativa | BE Nutrición Avanzada',
+    template: '%s | BE Nutrición Avanzada',
+  },
   description:
-    'Programas integrales de nutrición de precisión y bienestar laboral para el sector industrial y minero de la Puna Salteña. Salud ocupacional, rendimiento y datos aplicados a la salud corporativa.',
-  generator: 'v0.app',
+    'Nutrición de precisión para personas y empresas: salud ocupacional, bienestar laboral y programas para el sector industrial y minero.',
+  applicationName: 'BE Nutrición Avanzada',
   keywords: [
     'nutrición de precisión',
     'salud ocupacional',
@@ -32,11 +38,41 @@ export const metadata: Metadata = {
     'salud laboral',
     'litio',
   ],
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
   openGraph: {
-    title: 'BE Nutrición Avanzada',
+    title: 'Nutrición de Precisión y Salud Corporativa | BE Nutrición Avanzada',
     description:
-      'Salud, rendimiento y productividad corporativa para el sector industrial y minero.',
+      'Nutrición de precisión, salud ocupacional y bienestar para personas y organizaciones.',
+    url: '/',
+    siteName: 'BE Nutrición Avanzada',
+    locale: 'es_AR',
     type: 'website',
+    images: [
+      {
+        url: '/images/hero-puna-mining.png',
+        alt: 'Operación minera de altura en la Puna Salteña',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Nutrición de Precisión y Salud Corporativa | BE Nutrición Avanzada',
+    description:
+      'Nutrición de precisión, salud ocupacional y bienestar para personas y organizaciones.',
+    images: ['/images/hero-puna-mining.png'],
   },
 }
 

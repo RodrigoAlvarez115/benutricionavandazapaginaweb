@@ -36,9 +36,9 @@ function PatientHero() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-celeste">
             Atención nutricional
           </p>
-          <h2 className="mt-5 text-balance text-4xl font-bold leading-[1.05] text-white sm:text-5xl">
+          <h1 className="mt-5 text-balance text-4xl font-bold leading-[1.05] text-white sm:text-5xl">
             Nutrición pensada para acompañarte
-          </h2>
+          </h1>
           <p className="mt-6 text-pretty text-lg leading-relaxed text-blue-100/90 lg:text-xl">
             Un espacio de atención nutricional personalizada, con una mirada cercana e integral sobre tu bienestar.
           </p>
