@@ -28,6 +28,16 @@ export const metadata: Metadata = {
   description:
     'Nutrición de precisión para personas y empresas: salud ocupacional, bienestar laboral y programas para el sector industrial y minero.',
   applicationName: 'BE Nutrición Avanzada',
+  icons: {
+    icon: [
+      {
+        url: '/images/BeNA-Isotipo.png',
+        type: 'image/png',
+      },
+    ],
+    shortcut: '/images/BeNA-Isotipo.png',
+    apple: '/images/BeNA-Isotipo.png',
+  },
   keywords: [
     'nutrición de precisión',
     'salud ocupacional',
